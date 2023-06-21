@@ -1,0 +1,22 @@
+# Python-generated files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+
+# VSCode specific files
+.vscode/
+*.code-workspace
+
+# Logs and temporary files
+*.log
+*.swp
+*~
+
+# Sensitive configuration files
+.env
+
+# PyInstaller generated files (if using)
+dist/
+build/
