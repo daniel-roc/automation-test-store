@@ -1,6 +1,6 @@
 # Automation Test Store Project
 
-This is a training test automation project of the website [Automation Test Store](www.automationteststore.com), a place to practice your automation skills.
+This is a training test automation project of the website [Automation Test Store](https://www.automationteststore.com/), a place to practice your automation skills.
 
 The technologies used are Python (version 3.10.6) with venv, Pytest and Selenium Webdriver.
 
@@ -37,7 +37,7 @@ Here is the new paragraph with the link to access the test cases of the project:
 
 ## Test Cases
 
-You can access the test cases of the project using this link: https://dub.sh/nVS7Sju
+[Click here](https://drive.google.com/drive/folders/1dQFPcqWJD2M1K5zkFIBh6zefsPVGDGhd?usp=sharing) to access the test cases of the project.
 
 ## Author
 
