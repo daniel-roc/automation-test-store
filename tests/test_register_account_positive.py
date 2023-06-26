@@ -1,7 +1,7 @@
 import pytest
 from page_objects.account_created_page import AccountCreatedPage
 from page_objects.register_account_page import RegisterAccountPage
-from test_data.register_data import account_info
+from test_data.account_data import account_info
 
 
 class TestPositiveScenarios:
