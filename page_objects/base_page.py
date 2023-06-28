@@ -31,10 +31,15 @@ class BasePage():
         self._wait_until_element_is_visible(locator, time)
         self._find(locator).click()
 
-    def _select_dropdown(self, locator: tuple, selected_text: str, time: int = 10):
+    def _select_dropdown_by_name(self, locator: tuple, selected_text: str, time: int = 10):
         self._wait_until_element_is_visible(locator, time)
         dropdow = Select(self._find(locator))
         dropdow.select_by_visible_text(selected_text)
+    
+    def _select_dropdown_by_index(self, locator: tuple, item_index: str, time: int = 10):
+        self._wait_until_element_is_visible(locator, time)
+        dropdow = Select(self._find(locator))
+        dropdow.select_by_index(item_index)
 
     def _wait_until_element_is_visible(self, locator: tuple,  time: int = 10):
         wait = WebDriverWait(self._driver, time)
