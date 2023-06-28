@@ -1,3 +1,4 @@
+import re
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -7,6 +8,7 @@ from page_objects.base_page import BasePage
 
 class RegisterAccountPage(BasePage):
 
+    __faker = Faker()
     __url = "https://automationteststore.com/index.php?rt=account/create"
     __first_name_input_field = (By.ID, "AccountFrm_firstname")
     __last_name_input_field = (By.ID, "AccountFrm_lastname")
@@ -27,7 +29,8 @@ class RegisterAccountPage(BasePage):
     __subscribe_no_radio_button = (By.ID, "AccountFrm_newsletter0")
     __privacy_police_checkbox = (By.ID, "AccountFrm_agree")
     __continue_button = (By.XPATH, "//button[@title='Continue']")
-    __faker = Faker()
+    __error_message = (By.XPATH, "//div[@id='maincontainer']//div[@class='col-md-12 col-xs-12 mt20']/div/div[1]")
+
 
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
@@ -55,7 +58,6 @@ class RegisterAccountPage(BasePage):
         super()._type(self.__password_confirm_input_field, password)
         super()._click(self.__subscribe_yes_radio_button)
         super()._click(self.__privacy_police_checkbox)
-        super()._click(self.__continue_button)
     
 
     def type_required_fields(self):
@@ -72,20 +74,18 @@ class RegisterAccountPage(BasePage):
         super()._type(self.__username_input_field, self.__faker.user_name())
         super()._type(self.__password_input_field, password)
         super()._type(self.__password_confirm_input_field, password)
-        super()._click(self.__privacy_police_checkbox)
+        self.check_privacy_police()
+
+    def click_continue_button(self):
         super()._click(self.__continue_button)
-        
-                
 
+    def check_privacy_police(self):
+        super()._click(self.__privacy_police_checkbox)
 
-
-
-
-
-
-
-
-            
-
+    def get_error_message(self) -> str:
+        return super()._get_text(self.__error_message)
     
-    
+    def clear_text(self, error_message) -> str:
+        error_message = re.sub(r'\s', '', error_message)  # Remove white spaces, tabs, and line breaks
+        error_message = re.sub(r'[^\x00-\x7F]+', '', error_message)  # Remove non-ASCII characters
+        return error_message
