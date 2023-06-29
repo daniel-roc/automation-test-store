@@ -1,5 +1,3 @@
-import re
-import unicodedata
 import pytest
 
 from page_objects.register_account_page import RegisterAccountPage
