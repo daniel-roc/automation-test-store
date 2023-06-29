@@ -20,7 +20,6 @@ class TestNegativeScenarios:
     # 2- Test case: Invalid e-mail format
     @pytest.mark.register
     @pytest.mark.negative
-    @pytest.mark.debug
     def test_invalid_email_format(self, driver):
         register_page = RegisterAccountPage(driver)
         register_page.open()
