@@ -85,7 +85,11 @@ class RegisterAccountPage(BasePage):
     def get_error_message(self) -> str:
         return super()._get_text(self.__error_message)
     
-    def clear_text(self, error_message) -> str:
-        error_message = re.sub(r'\s', '', error_message)  # Remove white spaces, tabs, and line breaks
-        error_message = re.sub(r'[^\x00-\x7F]+', '', error_message)  # Remove non-ASCII characters
-        return error_message
+    def reformat_text(self, text) -> str:
+        text = re.sub(r'\s', '', text)  # Remove white spaces, tabs, and line breaks
+        text = re.sub(r'[^\x00-\x7F]+', '', text)  # Remove non-ASCII characters
+        return text
+    
+    def set_email(self, new_email: str):
+        super()._clear(self.__email_input_field)
+        super()._type(self.__email_input_field, new_email)
