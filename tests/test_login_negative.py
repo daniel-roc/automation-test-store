@@ -18,7 +18,6 @@ class TestNegativeScenarios:
     
     @pytest.mark.login
     @pytest.mark.negative
-    @pytest.mark.debug
     def test_login_incorrect_password(self, driver):
         login_page = LoginPage(driver)
         login_page.open()
