@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import Select
 from selenium.common import NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains
 
 class BasePage():
 
@@ -40,6 +41,11 @@ class BasePage():
         self._wait_until_element_is_visible(locator, time)
         dropdow = Select(self._find(locator))
         dropdow.select_by_index(item_index)
+    
+    def _hover_over(self, locator: tuple, time: int = 10):
+        self._wait_until_element_is_visible(locator, time)
+        actions = ActionChains(self._driver)
+        actions.move_to_element(self._find(locator)).perform()
 
     def _wait_until_element_is_visible(self, locator: tuple,  time: int = 10):
         wait = WebDriverWait(self._driver, time)
