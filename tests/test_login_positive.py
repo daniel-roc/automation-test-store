@@ -43,3 +43,4 @@ class TestPositiveScenarios:
         account_dashboard_page.click_logoff_button()
         logout_page = LogoutPage(driver)
         assert account_dashboard_page.current_url == logout_page.get_url(), "Actual URL is not the same as expected."
+        assert logout_page.get_login_or_register_button_text() == "Login or register", "Button text is not the expected."
