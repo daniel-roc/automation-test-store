@@ -36,7 +36,7 @@ class RegisterAccountPage(BasePage):
         super().__init__(driver)
 
     def open(self):
-        super()._open_url(self.__url)
+        super().open_url(self.__url)
 
     def type_all_fields(self):
         password = self.__faker.password()

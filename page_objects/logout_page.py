@@ -17,5 +17,3 @@ class LogoutPage(BasePage):
     
     def get_login_or_register_button_text(self) -> str:
         return super()._get_text(self.__login_or_register_button)
-    
-    # //ul[@id='customer_menu_top']//a[@href='https://automationteststore.com/index.php?rt=account/login']

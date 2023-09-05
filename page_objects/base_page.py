@@ -14,7 +14,7 @@ class BasePage():
     def current_url(self) -> str:
         return self._driver.current_url
     
-    def _open_url(self, url: str):
+    def open_url(self, url: str):
         self._driver.get(url)
     
     def _find(self, locator: tuple):

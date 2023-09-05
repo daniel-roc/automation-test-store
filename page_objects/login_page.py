@@ -19,7 +19,7 @@ class LoginPage(BasePage):
         super().__init__(driver)
 
     def open(self):
-        super()._open_url(self.__url)
+        super().open_url(self.__url)
 
     def get_url(self) -> str:
         return self.__url    
