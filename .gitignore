@@ -24,3 +24,4 @@ build/
 # HTML test reports
 assets
 *.html
+reports

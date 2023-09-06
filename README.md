@@ -8,12 +8,18 @@ The technologies used are Python (version 3.10.6) with venv, Pytest and Selenium
 
 The project is structured with two main folders:
 
-- **test**: This folder contains the test scripts that use Pytest framework and Selenium Webdriver to interact with the web elements and verify the expected results.
+- **tests**: This folder contains the test scripts that use Pytest framework and Selenium Webdriver to interact with the web elements and verify the expected results.
 - **page_object**: This folder contains the page object classes that represent each web page of the Automation Test Store website. Each class has methods to locate and manipulate the web elements on that page.
 
 ## Prerequisites
 
 To run this project, you need to have **Google Chrome** browser installed on your machine, as it is the default browser used by the test scripts.
+
+If you encounter compatibility issues between the Selenium WebDriver and the version of Google Chrome installed on your computer, it's recommended to update the Selenium package to ensure compatibility. To update the Selenium package inside the project, you can use the following command:
+
+`pip install --upgrade selenium`
+
+Running this command will update the Selenium package to the latest version available, which should help resolve any compatibility problems with your Google Chrome browser. Make sure you run this command within your project's virtual environment (activated as described in the installation instructions) to ensure that the package is updated specifically for your project.
 
 ## Installation
 
@@ -28,16 +34,10 @@ To check this repository and install the dependencies in your own machine, follo
 
 To run the tests in the terminal, use the following commands:
 
-- On Windows: `py.test test --html=report.html`
-- On Linux/Mac: `python -m pytest test --html=report.html`
+- On Windows: `py.test tests --html=reports\report.html`
+- On Linux/Mac: `python -m pytest tests --html=reports/report.html`
 
 This will generate an HTML report with the test results in the current directory.
-
-Here is the new paragraph with the link to access the test cases of the project:
-
-## Test Cases
-
-[Click here](https://drive.google.com/drive/folders/1dQFPcqWJD2M1K5zkFIBh6zefsPVGDGhd?usp=sharing) to access the test cases of the project.
 
 ## Author
 
